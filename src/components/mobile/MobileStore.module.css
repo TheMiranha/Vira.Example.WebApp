@@ -1,0 +1,598 @@
+/* Estilos estritamente baseados nos tokens semânticos do UIArc */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-body);
+}
+
+.container {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4) var(--space-8);
+  box-sizing: border-box;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 1. Header do Perfil Otimizado Acima da Dobra */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.coverMedia {
+  width: 100%;
+  height: 175px;
+  border-radius: var(--radius-surface);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.profileMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.creatorTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  color: var(--foreground);
+}
+
+.creatorBio {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+  max-width: 380px;
+  text-wrap: pretty;
+}
+
+.socialNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 2px;
+}
+
+/* Alvo de toque expandido para 44px (WCAG 2.5.5) */
+.socialBtn {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  transition: color var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+  text-decoration: none;
+}
+
+.socialBtn:hover {
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+
+/* 2. Card de Produto em Destaque (Sem Nested Cards) */
+.featuredSection {
+  width: 100%;
+}
+
+.featuredCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-resting);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cardTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  color: var(--foreground);
+}
+
+.cardSubtitle {
+  margin: 2px 0 0 0;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: var(--leading-body);
+  text-wrap: pretty;
+}
+
+/* Removido estilo de nested card: sem borda fechada de card interno */
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.priceValue {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.priceNumbers {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.currentPrice {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+/* Contraste ajustado para passar em WCAG AA (≥4.5:1) */
+.originalPrice {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.installmentsLabel {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.badgesWrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Rating badge com contraste ajustado (≥4.5:1) */
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: #78350f;
+  background: #fef3c7;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.fullWidthAction {
+  width: 100% !important;
+  min-height: 48px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+/* 3. Seção de Acesso Rápido */
+.quickSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionHeading {
+  padding: 0 var(--space-1);
+}
+
+/* Contraste ajustado para passar em WCAG AA (≥4.5:1) */
+.sectionLabel {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.itemsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.quickCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard);
+  font: inherit;
+  color: inherit;
+  box-shadow: var(--shadow-resting);
+}
+
+.quickCard:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-muted);
+}
+
+.cardIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardItemTitle {
+  display: block;
+  margin: 0 0 2px 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.cardItemDesc {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardPricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.cardPrice {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+.cardActionTag {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* ========================================================================= */
+/* ESTILOS INTERNOS DOS BOTTOM SHEETS COM POLIMENTO                          */
+/* ========================================================================= */
+.sheetLayout {
+  padding: var(--space-2) 0 max(var(--space-4), env(safe-area-inset-bottom, 20px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sessionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+}
+
+.sessionLabel {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.sessionPrice {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+.sessionPills {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.pillItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px var(--space-2);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+.checkoutForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.productSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-control);
+}
+
+.summaryDetails {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.fileTag {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px var(--space-2);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+.summaryTitle {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.summaryMeta {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.summaryValue {
+  font-size: var(--text-base);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.priceCombo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.oldPrice {
+  font-size: var(--text-xs);
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.includedBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4);
+}
+
+.includedTitle {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.includedList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.includedList li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--foreground);
+}
+
+.checkIcon {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.paymentMethods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.payOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard);
+}
+
+.payOptionSelected {
+  border-color: var(--foreground);
+  color: var(--foreground);
+  background: var(--surface-muted);
+}
+
+/* Campos de Cartão de Crédito */
+.cardFieldsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.trustFootnote {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Área de Sucesso e Download Real */
+.successBox {
+  padding: var(--space-6) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+}
+
+.successIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--success) 14%, var(--surface));
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successBox h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+}
+
+.successBox p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.downloadArea {
+  width: 100%;
+  background: var(--surface-muted);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-control);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.fileName {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+/* Área de Agendamento Concluído */
+.bookingSuccessCard {
+  width: 100%;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: left;
+}
+
+.meetLinkRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  font-weight: 500;
+}
